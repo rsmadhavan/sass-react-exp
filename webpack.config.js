@@ -37,6 +37,17 @@ module.exports = {
         test: /\.scss$/, //Match .scss files
         use: ['style-loader','css-loader','sass-loader'], // Use loaders for Sass files
       },
+      {
+        test: /\.(jpe?g|gif|png|svg)$/i,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit:10000
+            }
+          }
+        ]
+      }
     ],
   },
   plugins: [
